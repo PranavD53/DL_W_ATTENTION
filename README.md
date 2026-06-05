@@ -24,3 +24,13 @@ Run locally with `pip install streamlit tensorflow pandas reportlab matplotlib` 
 
 ---
 
+## Lex·AI — Contract Analyzer
+An AI-powered legal contract intelligence system built with Streamlit and TensorFlow.
+Analyzes contract text using an attention-based NLI model to classify clauses as Contradiction, Entailment, or Neutral.
+Provides risk scanning, keyword extraction, attention visualization, positional encoding insights, and downloadable reports.
+Designed with a premium dark-themed UI for intuitive legal document analysis and review.
+
+**Link**: https://lex-ai-dl.streamlit.app/
+
+---
+
