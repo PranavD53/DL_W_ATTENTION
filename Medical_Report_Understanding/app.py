@@ -511,14 +511,16 @@ def load_tokenizer():
 def load_label_encoder():
     try:
         with open(os.path.join(BASE_DIR, "label_encoder.pkl"), "rb") as f:
+            
             return pickle.load(f)
-    except Exception:
+    except Exception as e:
+        st.error(f"Error loading encoder: {e}")
         return None
 
 @st.cache_data
 def load_medical_dict():
     try:
-        return pd.read_csv(os.path.join(BASE_DIR, "medical_dictionary.csv"))
+        return pd.read_csv("medical_dictionary.csv")
     except Exception:
         # Provide a fallback dictionary with common medical terms
         terms = [
