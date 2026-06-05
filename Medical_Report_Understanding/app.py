@@ -513,8 +513,7 @@ def load_label_encoder():
         with open(os.path.join(BASE_DIR, "label_encoder.pkl"), "rb") as f:
             
             return pickle.load(f)
-    except Exception as e:
-        st.error(f"Error loading encoder: {e}")
+    except Exception:
         return None
 
 @st.cache_data
