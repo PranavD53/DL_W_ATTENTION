@@ -5,6 +5,8 @@
 ╚══════════════════════════════════════════════════════════════════════╝
 """
 
+import os
+
 import streamlit as st
 import tensorflow as tf
 import numpy as np
@@ -488,18 +490,19 @@ hr {
 # ══════════════════════════════════════════════════════════════
 #  ASSET LOADING WITH GRACEFUL FALLBACKS
 # ══════════════════════════════════════════════════════════════
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "explainable_model")
 @st.cache_resource
 def load_model():
     try:
-        return tf.saved_model.load("explainable_model")
+        return tf.saved_model.load(model_path)
     except Exception as e:
         return None
 
 @st.cache_resource
 def load_tokenizer():
     try:
-        with open("tokenizer.pkl", "rb") as f:
+        with open(os.path.join(BASE_DIR, "tokenizer.pkl"), "rb") as f:
             return pickle.load(f)
     except Exception:
         return None
@@ -507,7 +510,7 @@ def load_tokenizer():
 @st.cache_resource
 def load_label_encoder():
     try:
-        with open("label_encoder.pkl", "rb") as f:
+        with open(os.path.join(BASE_DIR, "label_encoder.pkl"), "rb") as f:
             return pickle.load(f)
     except Exception:
         return None
@@ -515,7 +518,7 @@ def load_label_encoder():
 @st.cache_data
 def load_medical_dict():
     try:
-        return pd.read_csv("medical_dictionary.csv")
+        return pd.read_csv(os.path.join(BASE_DIR, "medical_dictionary.csv"))
     except Exception:
         # Provide a fallback dictionary with common medical terms
         terms = [
