@@ -1,0 +1,9 @@
+streamlit
+tensorflow
+pandas
+numpy
+matplotlib
+seaborn
+joblib
+plotly
+pathlib
