@@ -14,3 +14,13 @@ To launch: `pip install streamlit tensorflow plotly pandas numpy scikit-learn jo
 
 ---
 
+## MedScan AI — Medical Report Understanding System
+An attention-based NLP Streamlit app that classifies medical reports into specialties (Cardiology, Neurology, Oncology, etc.) using a TensorFlow model with positional encoding visualization.
+Upload a `.txt` clinical report or paste text directly, and the system predicts the medical specialty with a confidence score, matched medical terms, and word-frequency charts.
+All results export as a styled PDF containing patient metadata, classification results, detected terms table, and a report excerpt.
+Run locally with `pip install streamlit tensorflow pandas reportlab matplotlib` then `streamlit run medical_analysis_app.py`.
+
+**Link**: https://medscan-dl.streamlit.app/
+
+---
+
