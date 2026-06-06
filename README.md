@@ -34,3 +34,12 @@ Designed with a premium dark-themed UI for intuitive legal document analysis and
 
 ---
 
+## Aurum Recruit — AI Hiring Intelligence
+A luxury-themed Streamlit dashboard that ranks candidates against a job description using TF-IDF cosine similarity.
+Upload PDF résumés, paste a job description, and instantly receive a scored leaderboard with keyword extraction and attention heatmaps.
+Styled in a deep navy + champagne gold palette with Cormorant Garamond typography for a refined, professional aesthetic.
+Run with `pip install streamlit pandas scikit-learn PyPDF2 matplotlib` then `streamlit run recruitment_dashboard.py`.
+
+**Link**: https://aurum-dl.streamlit.app/
+
+---
